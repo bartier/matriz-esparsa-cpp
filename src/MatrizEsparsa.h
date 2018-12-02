@@ -10,12 +10,12 @@ private:
     int linhas;
     int colunas;
     T valorPadrao;
-    AVLTree<Linha<T>> linhasMatriz;
+    AVLTree<Linha<T>*> *linhasMatriz;
 public:
     MatrizEsparsa(int linhas, int colunas, T valorPadrao);
-    int getLinhas();
-    int getColunas();
-    T getValorPadrao();
+    int getLinhas() const;
+    int getColunas() const;
+    T getValorPadrao() const;
 
     T get(int linha, int coluna);
     T set(int linha, int coluna, T informacao);

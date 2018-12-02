@@ -27,7 +27,7 @@ public:
      * @param info info é a informação a ser buscada.
      * @return true se ela existe na árvore, caso contrário false.
      */
-    bool contains(T const &info);
+    T contains(T const &info);
 
     /**
      * Overload <<

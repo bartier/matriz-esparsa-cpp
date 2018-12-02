@@ -199,34 +199,34 @@ void AVLTree<T>::remove(const T &info) {
 }
 
 template<class T>
-bool AVLTree<T>::contains(const T &info) {
+T AVLTree<T>::contains(const T &info) {
     if (root == nullptr) {
-        return false;
+        return nullptr;
     }
 
     if (root->getInfo() == info) {
-        return true;
+        return root->getInfo();
     }
 
     if (root->isLeaf()) {
-        return false;
+        return nullptr;
     }
 
     NodeTree<T> *tmp = root->next(info);
 
     while (tmp != nullptr && !tmp->isLeaf()) {
         if (tmp->getInfo() == info) {
-            return true;
+            return tmp->getInfo();
         }
 
         tmp = tmp->next(info);
     }
 
     if (tmp == nullptr) {
-        return false;
+        return nullptr;
     }
 
-    return tmp->getInfo() == info;
+    return tmp->getInfo();
 }
 
 template<typename U>
