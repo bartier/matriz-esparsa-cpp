@@ -1,7 +1,7 @@
 #ifndef MATRIZESPARSA_LINHA_H
 #define MATRIZESPARSA_LINHA_H
 
-#include "AVLTree.h"
+#include "../AVLTree/src/AVLTree.h"
 #include "WrapperColuna.h"
 
 template <typename T>

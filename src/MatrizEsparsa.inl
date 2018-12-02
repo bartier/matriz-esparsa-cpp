@@ -50,7 +50,6 @@ T MatrizEsparsa<T>::get(int linha, int coluna) {
             return valorPadrao;
         } else {
             WrapperColuna wrapperDaInformacaoBuscada = colunaExistente->matches(colunaDoParametro);
-
             return wrapperDaInformacaoBuscada.getInformacao();
         }
     }

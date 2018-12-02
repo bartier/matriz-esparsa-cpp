@@ -23,5 +23,10 @@ int main() {
     cout << matrizTeste->get(7,2) << endl;
     cout << matrizTeste->get(7,3) << endl;
 
+    cout << matrizTeste->get(8,0) << endl;
+    cout << matrizTeste->get(8,2) << endl;
+    cout << matrizTeste->get(2,9) << endl;
+    cout << matrizTeste->get(9,9) << endl;
+
     return 0;
 }

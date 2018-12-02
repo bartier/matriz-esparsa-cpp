@@ -3,4 +3,4 @@ project(MatrizEsparsa)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(MatrizEsparsa src/main.cpp src/AVLTree.h src/NodeTree.h src/MatrizEsparsa.h src/Linha.h src/WrapperColuna.h)
+add_executable(MatrizEsparsa src/main.cpp src/MatrizEsparsa.h src/Linha.h src/WrapperColuna.h AVLTree/src/AVLTree.h AVLTree/src/NodeTree.h)
