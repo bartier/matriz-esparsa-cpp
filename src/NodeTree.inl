@@ -9,7 +9,7 @@ NodeTree<T>::NodeTree() {
 }
 
 template<class T>
-NodeTree<T>::NodeTree(const T &info) {
+NodeTree<T>::NodeTree(T &info) {
     this->info = info;
     this->left = nullptr;
     this->right = nullptr;
@@ -51,7 +51,7 @@ int NodeTree<T>::height(NodeTree<T> *node) {
 }
 
 template<class T>
-NodeTree<T> *NodeTree<T>::next(const T &info) {
+NodeTree<T> *NodeTree<T>::next(T &info) {
     if (info > this->info) {
         return this->right;
     } else if (info < this->info) {
@@ -82,6 +82,6 @@ NodeTree<T> *NodeTree<T>::getRight() {
 }
 
 template<class T>
-void NodeTree<T>::setInfo(const T &info) {
+void NodeTree<T>::setInfo(T &info) {
     this->info = info;
 }

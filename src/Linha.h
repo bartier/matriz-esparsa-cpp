@@ -8,15 +8,17 @@ template <typename T>
 class Linha {
 private:
     int linha;
-    AVLTree<WrapperColuna<T>*> *coluna;
+    AVLTree<WrapperColuna<T>> *coluna;
 public:
+    Linha();
     Linha(int linha);
 
     int getLinha();
-    AVLTree<WrapperColuna<T>*>* getColuna();
+    AVLTree<WrapperColuna<T>>* getColuna();
 
     bool operator== (const Linha &outra);
     bool operator< (const Linha &outra);
+    bool operator> (const Linha &outra);
 
 };
 

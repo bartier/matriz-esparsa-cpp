@@ -14,20 +14,22 @@ public:
      * Insere uma informação na árvore mantendo balanceamento.
      * @param info informação a ser inserida.
      */
-    void insert(T const &info);
+    void insert(T &info);
 
     /**
      * Remove uma informação na árvore mantendo balanceamento.
      * @param info informação a ser removida.
      */
-    void remove(T const &info);
+    void remove(T &info);
 
     /**
      * Verifica se a informação existe na árvore.
      * @param info info é a informação a ser buscada.
      * @return true se ela existe na árvore, caso contrário false.
      */
-    T contains(T const &info);
+    bool contains(T &info);
+
+    T matches(T &info);
 
     /**
      * Overload <<

@@ -1,4 +1,9 @@
 template<typename T>
+WrapperColuna<T>::WrapperColuna() {
+    this->coluna = -1;
+}
+
+template<typename T>
 WrapperColuna<T>::WrapperColuna(int coluna, T informacao) {
     this->coluna = coluna;
     this->informacao = informacao;
@@ -11,7 +16,7 @@ WrapperColuna<T>::WrapperColuna(int coluna) {
 
 template<typename T>
 int WrapperColuna<T>::getColuna() {
-    return this->getColuna();
+    return this->coluna;
 }
 
 template<typename T>
@@ -26,10 +31,20 @@ void WrapperColuna<T>::setInformacao(T informacaoAtualizada) {
 
 template<typename T>
 bool WrapperColuna<T>::operator==(const WrapperColuna &outro) {
-    return this->coluna == outro.getColuna();
+    return this->coluna == outro.coluna;
+}
+
+template<typename T>
+bool WrapperColuna<T>::operator!=(const WrapperColuna &outro) {
+    return this->coluna != outro.coluna;
 }
 
 template<typename T>
 bool WrapperColuna<T>::operator<(const WrapperColuna &outro) {
-    return this->coluna < outro.getColuna();
+    return this->coluna < outro.coluna;
+}
+
+template<typename T>
+bool WrapperColuna<T>::operator>(const WrapperColuna &outro) {
+    return this->coluna > outro.coluna;
 }

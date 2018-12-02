@@ -6,13 +6,13 @@ class NodeTree {
 public:
     explicit NodeTree<T>();
 
-    explicit NodeTree<T>(const T &info);
+    explicit NodeTree<T>(T &info);
 
     void setLeft(NodeTree<T> *left);
 
     void setRight(NodeTree<T> *right);
 
-    void setInfo(const T &info);
+    void setInfo(T &info);
 
     NodeTree<T> *getLeft();
 
@@ -20,7 +20,7 @@ public:
 
     T getInfo();
 
-    NodeTree<T> *next(const T &info);
+    NodeTree<T> *next(T &info);
 
     bool isLeaf();
 

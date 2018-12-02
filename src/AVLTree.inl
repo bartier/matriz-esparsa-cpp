@@ -6,10 +6,10 @@ AVLTree<T>::AVLTree() {
 }
 
 template<class T>
-void AVLTree<T>::insert(T const &info) {
-    if (this->contains(info)) {
-        throw std::invalid_argument("Info already exists in AVL Tree");
-    }
+void AVLTree<T>::insert(T &info) {
+//    if (this->contains(info)) {
+//        throw std::invalid_argument("Info already exists in AVL Tree");
+//    }
 
     NodeTree<T> *newNode = new NodeTree<T>(info);
 
@@ -118,7 +118,7 @@ void AVLTree<T>::balance(std::stack<NodeTree<T> *> &stack) {
 }
 
 template<class T>
-void AVLTree<T>::remove(const T &info) {
+void AVLTree<T>::remove(T &info) {
     if (!this->contains(info)) {
         throw std::invalid_argument("Info does not exists in AVL Tree");
     }
@@ -174,7 +174,7 @@ void AVLTree<T>::remove(const T &info) {
                 currentNode = currentNode->getLeft();
             }
         }
-        target->setInfo(currentNode->getInfo());
+        target->setInfo(*(new T(currentNode->getInfo())));
 
         if (fatherOfTmpNode->getLeft() == currentNode) {
             fatherOfTmpNode->setLeft(nullptr);
@@ -189,7 +189,7 @@ void AVLTree<T>::remove(const T &info) {
         if (rightChildTarget != nullptr) {
             NodeTree<T> *tmpNode = target->getRight();
 
-            target->setInfo(rightChildTarget->getInfo());
+            target->setInfo(*(new T(rightChildTarget->getInfo())));
             target->setRight(rightChildTarget->getRight());
 
             delete tmpNode;
@@ -199,34 +199,34 @@ void AVLTree<T>::remove(const T &info) {
 }
 
 template<class T>
-T AVLTree<T>::contains(const T &info) {
+bool AVLTree<T>::contains(T &info) {
     if (root == nullptr) {
-        return nullptr;
+        return false;
     }
 
     if (root->getInfo() == info) {
-        return root->getInfo();
+        return true;
     }
 
     if (root->isLeaf()) {
-        return nullptr;
+        return false;
     }
 
     NodeTree<T> *tmp = root->next(info);
 
     while (tmp != nullptr && !tmp->isLeaf()) {
         if (tmp->getInfo() == info) {
-            return tmp->getInfo();
+            return true;
         }
 
         tmp = tmp->next(info);
     }
 
     if (tmp == nullptr) {
-        return nullptr;
+        return false;
     }
 
-    return tmp->getInfo();
+    return tmp->getInfo() == info;
 }
 
 template<typename U>
@@ -282,4 +282,35 @@ void AVLTree<T>::rightRotation(NodeTree<T> *father, NodeTree<T> *child) {
         child->setRight(father);
         father->setLeft(nullptr);
     }
+}
+
+template<class T>
+T AVLTree<T>::matches(T &info) {
+    if (root == nullptr) {
+        return T();
+    }
+
+    if (root->getInfo() == info) {
+        return root->getInfo();
+    }
+
+    if (root->isLeaf()) {
+        return T();
+    }
+
+    NodeTree<T> *tmp = root->next(info);
+
+    while (tmp != nullptr && !tmp->isLeaf()) {
+        if (tmp->getInfo() == info) {
+            return tmp->getInfo();
+        }
+
+        tmp = tmp->next(info);
+    }
+
+    if (tmp == nullptr) {
+        return T();
+    }
+
+    return tmp->getInfo();
 }

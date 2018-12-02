@@ -7,6 +7,7 @@ private:
     int coluna;
     T informacao;
 public:
+    WrapperColuna();
     WrapperColuna(int coluna, T informacao);
     WrapperColuna(int coluna);
 
@@ -16,7 +17,9 @@ public:
     void setInformacao(T informacaoAtualizada);
 
     bool operator== (const WrapperColuna &outro);
+    bool operator!=(const WrapperColuna &outro);
     bool operator< (const WrapperColuna &outro);
+    bool operator> (const WrapperColuna &outro);
 };
 
 #include "WrapperColuna.inl"
