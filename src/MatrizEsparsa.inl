@@ -32,12 +32,12 @@ T MatrizEsparsa<T>::getValorPadrao() {
 
 template<typename T>
 T MatrizEsparsa<T>::get(int linha, int coluna) {
-    if (linhas > 0 && linhas >= this->linhas) {
-        throw std::invalid_argument("Argumento linha é inválido.");
+    if (linhas > 0 && linha >= this->linhas) {
+        throw std::invalid_argument("Argumento linha eh invalido.");
     }
 
-    if (colunas > 0 && colunas >= this->colunas) {
-        throw std::invalid_argument("Argumento linha é inválido.");
+    if (colunas > 0 && coluna >= this->colunas) {
+        throw std::invalid_argument("Argumento linha eh invalido.");
     }
 
     Linha<T> linhaDoParametro(linha);
@@ -65,11 +65,11 @@ T MatrizEsparsa<T>::get(int linha, int coluna) {
 
 template<typename T>
 T MatrizEsparsa<T>::set(int linha, int coluna, T informacaoNova) {
-    if (linhas > 0 && linhas >= this->linhas) {
+    if (linhas > 0 && linha >= this->linhas) {
         throw std::invalid_argument("Argumento linha é inválido.");
     }
 
-    if (colunas > 0 && colunas >= this->colunas) {
+    if (colunas > 0 && coluna >= this->colunas) {
         throw std::invalid_argument("Argumento linha é inválido.");
     }
 
