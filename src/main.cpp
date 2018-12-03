@@ -28,5 +28,7 @@ int main() {
     cout << matrizTeste->get(2,9) << endl;
     cout << matrizTeste->get(9,9) << endl;
 
+    cout << *matrizTeste << endl;
+
     return 0;
 }

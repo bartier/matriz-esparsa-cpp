@@ -110,3 +110,8 @@ T MatrizEsparsa<T>::set(int linha, int coluna, T informacaoNova) {
         }
     }
 }
+
+template<class U>
+std::ostream &operator<<(std::ostream &os, MatrizEsparsa<U> matriz) {
+    return os << *(matriz.linhasMatriz);
+}

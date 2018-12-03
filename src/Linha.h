@@ -20,6 +20,9 @@ public:
     bool operator< (const Linha &outra);
     bool operator> (const Linha &outra);
 
+    template <class U>
+    friend std::ostream& operator<<(std::ostream& os, Linha<U> linha);
+
 };
 
 #include "Linha.inl"

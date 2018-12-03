@@ -1,6 +1,8 @@
 #ifndef MATRIZESPARSA_WRAPPERCOLUNA_H
 #define MATRIZESPARSA_WRAPPERCOLUNA_H
 
+#include <iostream>
+
 template <typename T>
 class WrapperColuna {
 private:
@@ -20,6 +22,9 @@ public:
     bool operator!=(const WrapperColuna &outro);
     bool operator< (const WrapperColuna &outro);
     bool operator> (const WrapperColuna &outro);
+
+    template <class U>
+    friend std::ostream& operator<<(std::ostream& os, WrapperColuna<U> wrapper);
 };
 
 #include "WrapperColuna.inl"

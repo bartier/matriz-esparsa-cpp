@@ -34,3 +34,10 @@ template<typename T>
 bool Linha<T>::operator>(const Linha &outra) {
     return this->linha > outra.linha;
 }
+
+template<class U>
+std::ostream &operator<<(std::ostream &os, Linha<U> linha) {
+    auto x = linha.coluna;
+    os << linha.linha << "-->" << *x << "";
+    return os;
+}

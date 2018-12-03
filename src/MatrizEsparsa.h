@@ -21,6 +21,9 @@ public:
 
     T get(int linha, int coluna);
     T set(int linha, int coluna, T informacaoNova);
+
+    template <class U>
+    friend std::ostream& operator<<(std::ostream& os, MatrizEsparsa<U> matriz);
 };
 
 #include "MatrizEsparsa.inl"

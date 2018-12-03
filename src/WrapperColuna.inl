@@ -48,3 +48,9 @@ template<typename T>
 bool WrapperColuna<T>::operator>(const WrapperColuna &outro) {
     return this->coluna > outro.coluna;
 }
+
+template<class U>
+std::ostream &operator<<(std::ostream &os, WrapperColuna<U> wrapper) {
+    os <<  wrapper.coluna << " '" << wrapper.informacao << "'";
+    return os;
+}
