@@ -13,6 +13,8 @@ private:
     AVLTree<Linha<T>> *linhasMatriz;
 public:
     MatrizEsparsa(int linhas, int colunas, T valorPadrao);
+    MatrizEsparsa(T valorPadrao);
+
     int getLinhas();
     int getColunas();
     T getValorPadrao();

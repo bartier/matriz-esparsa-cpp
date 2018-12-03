@@ -8,6 +8,14 @@ MatrizEsparsa<T>::MatrizEsparsa(int linhas, int colunas, T valorPadrao) {
 }
 
 template<typename T>
+MatrizEsparsa<T>::MatrizEsparsa(T valorPadrao) {
+    this->linhas = -1;
+    this->colunas = -1;
+    this->valorPadrao = valorPadrao;
+    this->linhasMatriz = new AVLTree<Linha<T>>();
+}
+
+template<typename T>
 int MatrizEsparsa<T>::getLinhas() {
     return this->linhas;
 }
@@ -24,12 +32,12 @@ T MatrizEsparsa<T>::getValorPadrao() {
 
 template<typename T>
 T MatrizEsparsa<T>::get(int linha, int coluna) {
-    if (linha >= this->linhas || linha < 0) {
+    if (linhas > 0 && linhas >= this->linhas) {
         throw std::invalid_argument("Argumento linha é inválido.");
     }
 
-    if (coluna >= this->colunas || coluna < 0) {
-        throw std::invalid_argument("Argumento coluna é inválido.");
+    if (colunas > 0 && colunas >= this->colunas) {
+        throw std::invalid_argument("Argumento linha é inválido.");
     }
 
     Linha<T> linhaDoParametro(linha);
@@ -57,12 +65,12 @@ T MatrizEsparsa<T>::get(int linha, int coluna) {
 
 template<typename T>
 T MatrizEsparsa<T>::set(int linha, int coluna, T informacaoNova) {
-    if (linha >= this->linhas || linha < 0) {
+    if (linhas > 0 && linhas >= this->linhas) {
         throw std::invalid_argument("Argumento linha é inválido.");
     }
 
-    if (coluna >= this->colunas || coluna < 0) {
-        throw std::invalid_argument("Argumento coluna é inválido.");
+    if (colunas > 0 && colunas >= this->colunas) {
+        throw std::invalid_argument("Argumento linha é inválido.");
     }
 
     Linha<T> linhaDoParametro(linha);
