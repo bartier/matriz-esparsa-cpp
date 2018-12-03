@@ -49,7 +49,7 @@ T MatrizEsparsa<T>::get(int linha, int coluna) {
         if (!existeColuna) {
             return valorPadrao;
         } else {
-            WrapperColuna wrapperDaInformacaoBuscada = colunaExistente->matches(colunaDoParametro);
+            WrapperColuna<T> wrapperDaInformacaoBuscada = colunaExistente->matches(colunaDoParametro);
             return wrapperDaInformacaoBuscada.getInformacao();
         }
     }
