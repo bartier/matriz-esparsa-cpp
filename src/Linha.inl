@@ -26,6 +26,11 @@ bool Linha<T>::operator==(const Linha &outra) {
 }
 
 template<typename T>
+bool Linha<T>::operator!=(const Linha &outra) {
+    return this->linha != outra.linha;
+}
+
+template<typename T>
 bool Linha<T>::operator<(const Linha &outra) {
     return this->linha < outra.linha;
 }

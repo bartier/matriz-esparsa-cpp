@@ -17,6 +17,7 @@ public:
     AVLTree<WrapperColuna<T>>* getColuna();
 
     bool operator== (const Linha &outra);
+    bool operator!=(const Linha &outra);
     bool operator< (const Linha &outra);
     bool operator> (const Linha &outra);
 

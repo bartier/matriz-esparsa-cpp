@@ -101,6 +101,10 @@ T MatrizEsparsa<T>::set(int linha, int coluna, T informacaoNova) {
                 wrapperExistente.setInformacao(informacaoNova);
             } else {
                 arvoreColunaExistente->remove(wrapperColunaDoParametro);
+
+                if (arvoreColunaExistente->empty()) {
+                    linhasMatriz->remove(linhaExistente);
+                }
             }
         } else {
             if (valorPadrao != informacaoNova) {

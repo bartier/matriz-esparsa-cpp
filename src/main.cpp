@@ -30,5 +30,14 @@ int main() {
 
     cout << *matrizTeste << endl;
 
+    matrizTeste->set(0,0, -1);
+    matrizTeste->set(1,2, -1);
+    matrizTeste->set(2,2, -1);
+    matrizTeste->set(5,6, -1);
+    matrizTeste->set(7,2, -1);
+    matrizTeste->set(7,3, -1);
+
+    cout << *matrizTeste << endl;
+
     return 0;
 }
